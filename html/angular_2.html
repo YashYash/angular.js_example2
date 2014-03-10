@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Untitled Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../js/myController.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/angular.css">
+</head>
+
+<body>
+	<div ng-app="myApp">
+    	<div ng-controller="myController">
+        	<input ng-model="text">
+            <div>
+            	Your text appears here: {{ text }}
+            </div>
+            
+            <div ng-hide="text">
+            	You havent written anything yet
+            </div>
+            
+            <div ng-show="text">
+            	Nice, you wrote something
+            </div>
+            
+            <div ng-class="text">
+            	Watch what happens when you type "blue"
+            </div>
+
+       </div>
+
+    
+        <div ng-controller="myController2">
+                      <input ng-model="todo">
+                      <div>{{ todo }}</div>
+                      <button ng-click="addToList();">Add to list</button>
+                      <div>My Todo List</div>
+                      <div ng-repeat="item in list">
+                        {{ item }}
+                      </div>
+   		</div>
+ 	</div>
+    
+</body>
+</html>
